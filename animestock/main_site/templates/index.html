@@ -20,57 +20,77 @@
 
         <div class="col col-2 p-0 prew">
 
-          <!-- Логотип -->
-          <div class="phot_main_cont">
-            <img class="phot_main" src="{% static 'images/logo.png' %}" alt="">
-            <img class="" src="{% static 'images/vector.png' %}" alt="">
-          </div>
-
-          <!-- Меню -->
-          <div style="color: #FFFFFF;">
-            <h5 class="menu_text">Меню</h5>
-          </div>
-
           
 
-          <ul class="list-group ki">
-              <!-- Главная -->
-              <li class="li-he">
-                <a href="#" class="var_nav" >
-                  <div class="link_bg_main" id="main">
-                    <h5 class="margain_nav">Главная</h5>
-                  </div>
-                </a>
-              </li>
+          <!-- Логотип -->
+          <div class="cont">
+            <div class="phot_main_cont">
+              <img class="phot_main" src="{% static 'images/logo.png' %}" alt="">
+              <img class="" src="{% static 'images/vector.png' %}" alt="">
+            </div>
             
-              <!-- Жанры -->
-              <li class="li-he" onmouseover="changeItem()" onmouseout="rechangeItem()">
-                <a href="#" class="var_nav">
-                  <div class="link_bg">
-                    <h5 class="margain_nav">Жанры</h5>
-                  </div>
-                </a>
-              </li>
+            <!-- Меню -->
+            <div style="color: #FFFFFF;">
+              <h5 class="menu_text">Меню</h5>
+            </div>
             
-              <!-- Избранное -->
-              <li class="li-he" onmouseover="changeItem()" onmouseout="rechangeItem()">
-                <a href="#" class="var_nav">
-                  <div class="link_bg">
-                    <h5 class="margain_nav">Избранное</h5>
-                  </div>
-                </a>
-              </li>
             
-              <!-- Премиум -->
             
-              <li  onmouseover="changeItem()" onmouseout="rechangeItem()">
-                <a href="#" class="var_nav">
-                  <div class="link_bg">
-                    <h5 class="margain_nav">Премиум</h5>
-                  </div>
-                </a>
-              </li>
-          </ul>
+            <ul class="list-group ki">
+                <!-- Главная -->
+                <li class="li-he">
+                  <a href="#" class="var_nav" >
+                    <div class="link_bg_main" id="main">
+                      <div class="margain_nav">
+                        <img  class="icon" style="display: none;" id="icon_non_active_main" src="{% static 'images/icon/none_activ/main_none_activ.png' %}" alt="">
+                        <img class="icon" id="icon_active_main" src="{% static 'images/icon/activ/main_activ.png' %}" alt="">
+                        <h5 class="text_menu">Главная</h5>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              
+                <!-- Жанры -->
+                <li class="li-he" onmouseover="changeItemMain(); rechangeItemMainGender()" onmouseout="rechangeItemMain(); changeItemGender()">
+                  <a href="#" class="var_nav">
+                    <div class="link_bg" id="gender">
+                      <div class="margain_nav">
+                        <img  class="icon"  id="icon_non_active_gender" src="{% static 'images/icon/none_activ/gender_none_activ.png' %}" alt="">
+                        <img class="icon" style="display: none;" id="icon_active_gender" src="{% static 'images/icon/activ/gender_activ.png' %}" alt="">
+                        <h5  class="text_menu">Жанры</h5>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              
+                <!-- Избранное -->
+                <li class="li-he" onmouseover="changeItemMain(); rechangeItemMainFavorite()" onmouseout="rechangeItemMain(); changeItemFavorite()">
+                  <a href="#" class="var_nav">
+                    <div class="link_bg" id="favorite">
+                      <div class="margain_nav">
+                        <img  class="icon" id="icon_non_active_favorite" src="{% static 'images/icon/none_activ/favorite_none_activ.png' %}" alt="">
+                        <img class="icon" style="display: none;"  id="icon_active_favorite" src="{% static 'images/icon/activ/favorite_activ.png' %}" alt="">
+                        <h5 class="text_menu">Избранное</h5>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              
+                <!-- Премиум -->
+              
+                <li  onmouseover="changeItemMain(); rechangeItemMainPremium()" onmouseout="rechangeItemMain(); changeItemPremium()">
+                  <a href="#" class="var_nav">
+                    <div class="link_bg" id="premium">
+                      <div class="margain_nav">
+                        <img  class="icon"  id="icon_non_active_premium" src="{% static 'images/icon/none_activ/premium_none_activ.png' %}" alt="">
+                        <img class="icon" style="display: none;" id="icon_active_premium" src="{% static 'images/icon/activ/premium_activ.png' %}" alt="">
+                        <h5 class="text_menu">Премиум</h5>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+            </ul>
+          </div>
 
         </div>
           
@@ -90,14 +110,60 @@
 
 
 <script>
-  function changeItem() {
+  function changeItemMain() {
     document.getElementById('main').style.width = '0%';
     document.getElementById('main').style.color = 'white';
+    document.getElementById('icon_non_active_main').style.display = 'block';
+    document.getElementById('icon_active_main').style.display = 'none';
   }
-  function rechangeItem() {
+  function rechangeItemMain() {
     document.getElementById('main').style.width = '90%';
     document.getElementById('main').style.color = '#C3079A';
+    document.getElementById('icon_non_active_main').style.display = 'none';
+    document.getElementById('icon_active_main').style.display = 'block';
     document.getElementById('main').style.transition ='all 0.2s ease-in-out';
+  }
+
+  function changeItemGender() {
+    document.getElementById('gender').style.width = '0%';
+    document.getElementById('gender').style.color = 'white';
+    document.getElementById('icon_non_active_gender').style.display = 'block';
+    document.getElementById('icon_active_gender').style.display = 'none';
+  }
+  function rechangeItemMainGender() {
+    document.getElementById('gender').style.width = '90%';
+    document.getElementById('gender').style.color = '#C3079A';
+    document.getElementById('icon_non_active_gender').style.display = 'none';
+    document.getElementById('icon_active_gender').style.display = 'block';
+    document.getElementById('gender').style.transition ='all 0.2s ease-in-out';
+  }
+
+  function changeItemFavorite() {
+    document.getElementById('favorite').style.width = '0%';
+    document.getElementById('favorite').style.color = 'white';
+    document.getElementById('icon_non_active_favorite').style.display = 'block';
+    document.getElementById('icon_active_favorite').style.display = 'none';
+  }
+  function rechangeItemMainFavorite() {
+    document.getElementById('favorite').style.width = '90%';
+    document.getElementById('favorite').style.color = '#C3079A';
+    document.getElementById('icon_non_active_favorite').style.display = 'none';
+    document.getElementById('icon_active_favorite').style.display = 'block';
+    document.getElementById('favorite').style.transition ='all 0.2s ease-in-out';
+  }
+
+  function changeItemPremium() {
+    document.getElementById('premium').style.width = '0%';
+    document.getElementById('premium').style.color = 'white';
+    document.getElementById('icon_non_active_premium').style.display = 'block';
+    document.getElementById('icon_active_premium').style.display = 'none';
+  }
+  function rechangeItemMainPremium() {
+    document.getElementById('premium').style.width = '90%';
+    document.getElementById('premium').style.color = '#C3079A';
+    document.getElementById('icon_non_active_premium').style.display = 'none';
+    document.getElementById('icon_active_premium').style.display = 'block';
+    document.getElementById('premium').style.transition ='all 0.2s ease-in-out';
   }
 </script>
 </body>

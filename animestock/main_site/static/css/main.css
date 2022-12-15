@@ -18,17 +18,9 @@
     align-items: center;
 }
 
-.var_nav:hover .link_bg{
-    width: 90%;
-    background: #737171;
-    transition: all 0.2s ease-in-out;
-    height: 60px;
-    color: #C3079A;
-}
-
-
 .phot_main_cont{
     text-align: center;
+    
 }
 
 .link_bg_main{
@@ -40,6 +32,11 @@
     color: #C3079A;
     align-items: center;
 }
+
+.cont{
+    margin-top: 20px;
+}
+
 
 .ki{
     margin-top: 50px;
@@ -61,6 +58,20 @@ a {
 
 
 .margain_nav{
+    display: flex;
     margin-left: 50px;
+    justify-content: space-between;
+    align-items: center;
+    
 
+}
+
+.text_menu{
+    font-size: 24px;
+}
+.icon{
+    width: 100%; 
+    height: 100%;
+    margin-bottom: 7px;
+    margin-right: 10px;
 }
