@@ -1,4 +1,6 @@
-html { overflow:  hidden; }
+html { overflow:  hidden; -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;   }
 .prew{
     height: 100vh;
     background-color: #1C1D1D;
