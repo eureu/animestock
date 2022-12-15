@@ -16,55 +16,65 @@
   
     <div class="container-fluid ">
 
-      <div class="row">
+      <div class="row  justify-content-start">
 
-        <div class="col p-0 prew">
+        <div class="col col-2 p-0 prew">
 
           <!-- Логотип -->
-          <divs>
-            <img src="{% static 'images/logo.png' %}" alt="">
-          </divs>
-
-          <!-- Меню -->
-          <div>
-            <h5>Меню</h5>
+          <div class="phot_main_cont">
+            <img class="phot_main" src="{% static 'images/logo.png' %}" alt="">
+            <img class="" src="{% static 'images/vector.png' %}" alt="">
           </div>
 
-          <!-- Главная -->
-          <a href="">
-            <div>
-              <h5>Главная</h5>
-            </div>
-          </a>
-
-          <!-- Жанры -->
-          <a href="">
-            <div>
-              <h5>Жанры</h5>
-            </div>
-          </a>
-
-          <!-- Избранное -->
-          <a href="">
-            <div>
-              <h5>Избранное</h5>
-            </div>
-          </a>
-
-          <!-- Премиум -->
-
-          <a href="">
-            <div>
-              <h5>Премиум</h5>
-            </div>
-          </a>
-
-        </div>
-
+          <!-- Меню -->
+          <div style="color: #FFFFFF;">
+            <h5 class="menu_text">Меню</h5>
+          </div>
 
           
-        <div class="col col-10  p-0">
-            3 из 3
+
+          <ul class="list-group ki">
+              <!-- Главная -->
+              <li class="li-he">
+                <a href="#" class="var_nav" >
+                  <div class="link_bg_main" id="main">
+                    <h5 class="margain_nav">Главная</h5>
+                  </div>
+                </a>
+              </li>
+            
+              <!-- Жанры -->
+              <li class="li-he" onmouseover="changeItem()" onmouseout="rechangeItem()">
+                <a href="#" class="var_nav">
+                  <div class="link_bg">
+                    <h5 class="margain_nav">Жанры</h5>
+                  </div>
+                </a>
+              </li>
+            
+              <!-- Избранное -->
+              <li class="li-he" onmouseover="changeItem()" onmouseout="rechangeItem()">
+                <a href="#" class="var_nav">
+                  <div class="link_bg">
+                    <h5 class="margain_nav">Избранное</h5>
+                  </div>
+                </a>
+              </li>
+            
+              <!-- Премиум -->
+            
+              <li  onmouseover="changeItem()" onmouseout="rechangeItem()">
+                <a href="#" class="var_nav">
+                  <div class="link_bg">
+                    <h5 class="margain_nav">Премиум</h5>
+                  </div>
+                </a>
+              </li>
+          </ul>
+
+        </div>
+          
+        <div class="col col-10  p-0 osn">
         </div>
 
 
@@ -73,5 +83,18 @@
 
 
     </div>
+
+
+<script>
+  function changeItem() {
+    document.getElementById('main').style.width = '0%';
+    document.getElementById('main').style.color = 'white';
+  }
+  function rechangeItem() {
+    document.getElementById('main').style.width = '90%';
+    document.getElementById('main').style.color = '#C3079A';
+    document.getElementById('main').style.transition ='all 0.2s ease-in-out';
+  }
+</script>
 </body>
 </html>

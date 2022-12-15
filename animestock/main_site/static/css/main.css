@@ -3,7 +3,63 @@
     background-color: #1C1D1D;
 }
 
-.logo{
-    max-width: 292px;
-    
+.osn{
+    height: 100vh;
+    background-color: #151414;
+}
+
+.link_bg{
+    display: flex;
+    background-color: #737171;
+    width: 0%;
+    height: 60px;
+    border-radius: 7px;
+    color: white;
+    align-items: center;
+}
+
+.var_nav:hover .link_bg{
+    width: 90%;
+    background: #737171;
+    transition: all 0.2s ease-in-out;
+    height: 60px;
+    color: #C3079A;
+}
+
+
+.phot_main_cont{
+    text-align: center;
+}
+
+.link_bg_main{
+    display: flex;
+    background-color: #737171;
+    width: 90%;
+    height: 60px;
+    border-radius: 7px;
+    color: #C3079A;
+    align-items: center;
+}
+
+.ki{
+    margin-top: 50px;
+}
+
+.li-he{
+    margin-bottom: 30px;
+}
+
+.menu_text{
+    margin-left: 30px;
+}
+
+a {
+    color: white !important;
+    text-decoration: none
+  }
+
+
+.margain_nav{
+    margin-left: 50px;
+
 }
