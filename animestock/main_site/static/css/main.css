@@ -1,3 +1,4 @@
+html { overflow:  hidden; }
 .prew{
     height: 100vh;
     background-color: #1C1D1D;
@@ -21,6 +22,10 @@
 .phot_main_cont{
     text-align: center;
     
+}
+.container-fluid{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
 }
 
 .link_bg_main{
