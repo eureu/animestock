@@ -1,22 +1,77 @@
-<!DOCTYPE html>
-<html>
-
+{%load static%}
+<!doctype html>
+<html lang="ru">
 <head>
-    <meta charset="utf-8" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="ru">
+    <meta name="docsearch:version" content="5.0">
     <title>AnimeStock</title>
-    <link href="animestock\main_site\static\css\gmain.css" rel="stylesheet" type="text/css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
-
-  
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://bootstrap5.ru/css/docs.css">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
 </head>
-
-
 <body>
-    <iframe src="//aniboom.one/embed/Z61MpmyXrx4?episode=1&amp;translation=24" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" scrolling="no" allowfullscreen="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" width="981" height="553.516"></iframe>
-</body>
+  
+    <div class="container-fluid ">
 
+      <div class="row">
+
+        <div class="col p-0 prew">
+
+          <!-- Логотип -->
+          <divs>
+            <img src="{% static 'images/logo.png' %}" alt="">
+          </divs>
+
+          <!-- Меню -->
+          <div>
+            <h5>Меню</h5>
+          </div>
+
+          <!-- Главная -->
+          <a href="">
+            <div>
+              <h5>Главная</h5>
+            </div>
+          </a>
+
+          <!-- Жанры -->
+          <a href="">
+            <div>
+              <h5>Жанры</h5>
+            </div>
+          </a>
+
+          <!-- Избранное -->
+          <a href="">
+            <div>
+              <h5>Избранное</h5>
+            </div>
+          </a>
+
+          <!-- Премиум -->
+
+          <a href="">
+            <div>
+              <h5>Премиум</h5>
+            </div>
+          </a>
+
+        </div>
+
+
+          
+        <div class="col col-10  p-0">
+            3 из 3
+        </div>
+
+
+
+      </div>
+
+
+    </div>
+</body>
 </html>
