@@ -1,8 +1,7 @@
 {% extends 'genres.html' %}
 <!-- {% load static %} -->
 {% block content %}
-    {% if q %}
-        {% for i in q %}
+    
             <div class="row justify-content-evenly block_genres">
                 <div class="col col-1 block_genres_pass"></div>
                 <div class="col col-3 one_block_genres">
@@ -29,10 +28,7 @@
                         </a>
                     </div>
                     <div class="col col-2 block_genres_pass"></div> -->
-        {% endfor %}
-    {% else %}
-        <p>Не найдено публикаций по вашему запросу<br>Попробуйте повторить запрос с другой формулировкой</p>    
-    {% endif %}
+     
 {% endblock %}
 
 <!-- {% static 'images/posters/one_piec.png'%} -->
