@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views.generic import ListView
 from django.http import HttpResponse
 from .models import Anime
+from django.db.models import Q
 # Create your views here.
 
 def index(request):
@@ -22,23 +23,29 @@ def anime(request):
 
 
 class Search(ListView):
+    model = Anime
+    template_name = 'anime_list.html'
+ 
+    def get_queryset(self): # новый
+        query = self.request.GET.get('q')
+        object_list = Anime.objects.filter(
+            Q(title__icontains=query)
+        )
+        return object_list
+    
+    # def get_queryset(self):
+    #     return Anime.objects.filter(title__icontains=self.request.GET.get("q"))
+
 
     
-    def get_queryset(self):
-        return Anime.objects.filter(title__icontains=self.request.GET.get("q"))
-
 
     # def get_context_data(self, *args, **kwargs):
-    #     template_name = 'main_site/anime_list.html'
     #     context = super().get_context_data(*args, **kwargs)
-    #     context["q"] = self.request.GET.get("q")
-    #     return render(request=self.request, template_name=template_name, context=context)    
+    #     context["q"] = f'q={self.request.GET.get("q")}&'
+    #     print(context["q"])
+    #     print(context)
+    #     return context
 
-
-    def get_context_data(self, *args, **kwargs):
-        context = super().get_context_data(*args, **kwargs)
-        context["q"] = f'q={self.request.GET.get("q")}&'
-        return context
 
     # return render(request=request, template_name=self.template_name, context=context)
-# https://evileg.com/ru/post/364/
+    # https://evileg.com/ru/post/364/
