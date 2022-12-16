@@ -23,13 +23,18 @@ html { overflow:  hidden; -moz-user-select: none;
     
 }
 
+.poster_img{
+    width: 227px;
+    height: 387px;
+}
+
 .link_bg_main{
     display: flex;
     background-color: #737171;
     width: 90%;
     height: 60px;
     border-radius: 7px;
-    color: white;
+    color: #C3079A;
     align-items: center;
     
 }

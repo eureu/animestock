@@ -13,8 +13,8 @@ def index(request):
     return render(request, 'index.html')
 
 
-# def genres(request):
-#     return render(request, genres.html)
+def genres(request):
+    return render(request, 'genres.html')
 
 
 class Search(ListView):
