@@ -57,7 +57,7 @@ ROOT_URLCONF = 'animestock.urls'
 
 
 
-TEMPLATE_DIR = os.path.join(BASE_DIR, 'main_site/templates')
+TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 
 TEMPLATES = [
     {

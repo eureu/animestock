@@ -95,7 +95,7 @@
             
         <div class="col col-10  p-0 osn">
             <div class="col col-12"> 
-                <form>
+                <form method="get" action="{% url 'search' %}" >
                   <p><input type="search" name="q" placeholder="Поиск по сайту"> 
                   <input type="submit" value="Найти"></p>
                 </form>
@@ -103,44 +103,46 @@
                 <div class="row">
                     <div class="col col-7">
 
-                        <!-- Одна строка -->
+                        <!-- Одна строка | 12 -->
+                        {% block content %}
                         <div class="row justify-content-evenly block_genres">
-                            <div class="col col-1 block_genres_pass"></div>
-                            <div class="col col-3 one_block_genres">
-                               <a href="#">
-                                <div>
-                                    <img class="poster_img" src="{% static 'images/posters/one_piec.png'%}" alt="">
-                                </div>
-                               </a>
-                            </div>
-                            
-                            <div class="col col-3 one_block_genres block_genres_pass" >
-                                <a href="#">
-                                    <div>
-                                        <img class="poster_img" src="{% static 'images/posters/my_heroes_academy.png'%}" alt="">
-                                    </div>
-                                </a>
-                            </div>
-                            
-                            <div class="col col-3 one_block_genres">
-                                <a href="#">
-                                    <div>
-                                        <img class="poster_img" src="{% static 'images/posters/master_mec.png'%}" alt="">
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col col-2 block_genres_pass"></div>
+                          <div class="col col-1 block_genres_pass"></div>
+                          <div class="col col-3 one_block_genres">
+                             <a href="#">
+                              <div>
+                                  <img class="poster_img" src="{% static 'images/posters/one_piec.png'%}" alt="">
+                              </div>
+                             </a>
+                          </div>
+                          
+                          <div class="col col-3 one_block_genres block_genres_pass" >
+                              <a href="#">
+                                  <div>
+                                      <img class="poster_img" src="{% static 'images/posters/my_heroes_academy.png'%}" alt="">
+                                  </div>
+                              </a>
+                          </div>
+                          
+                          <div class="col col-3 one_block_genres">
+                              <a href="#">
+                                  <div>
+                                      <img class="poster_img" src="{% static 'images/posters/master_mec.png'%}" alt="">
+                                  </div>
+                              </a>
+                          </div>
+                          <div class="col col-2 block_genres_pass"></div>
 
-                            <div class="col col-1 block_genres_pass"></div>
-                            <div class="col col-3 one_block_genres">
-                               <a href="#">
-                                <div>
-                                    <img class="poster_img" src="{% static 'images/posters/one_piec.png'%}" alt="">
-                                </div>
-                               </a>
-                            </div>
-                            
-                            <div class="col col-3 one_block_genres" >
+                          <div class="col col-1 block_genres_pass"></div>
+                          <div class="col col-3 one_block_genres">
+                             <a href="#">
+                              <div>
+                                  <img class="poster_img" src="{% static 'images/posters/one_piec.png'%}" alt="">
+                              </div>
+                             </a>
+                          </div>
+                            {% endblock %}
+                            <!-- Вторая строка -->
+                            <!-- <div class="col col-3 one_block_genres" >
                                 <a href="#">
                                     <div>
                                         <img class="poster_img" src="{% static 'images/posters/my_heroes_academy.png'%}" alt="">
@@ -155,7 +157,7 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="col col-2 block_genres_pass"></div>
+                            <div class="col col-2 block_genres_pass"></div> -->
                         </div>
 
 
