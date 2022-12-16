@@ -33,6 +33,7 @@ class Search(ListView):
         context = super().get_context_data(*args, **kwargs)
         context["q"] = self.request.GET.get("q")
         return render(request=self.request, template_name=template_name, context=context)
+        
 
     # return render(request=request, template_name=self.template_name, context=context)
 # https://evileg.com/ru/post/364/
