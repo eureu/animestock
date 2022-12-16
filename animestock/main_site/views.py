@@ -17,6 +17,10 @@ def genres(request):
     return render(request, 'genres.html')
 
 
+# def anime(request):
+#     return render(request, 'anime.html')
+
+
 class Search(ListView):
 
     # template_name = 
