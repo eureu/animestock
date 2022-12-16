@@ -28,12 +28,17 @@ class Search(ListView):
         return Anime.objects.filter(title__icontains=self.request.GET.get("q"))
 
 
+    # def get_context_data(self, *args, **kwargs):
+    #     template_name = 'main_site/anime_list.html'
+    #     context = super().get_context_data(*args, **kwargs)
+    #     context["q"] = self.request.GET.get("q")
+    #     return render(request=self.request, template_name=template_name, context=context)    
+
+
     def get_context_data(self, *args, **kwargs):
-        template_name = 'main_site/anime_list.html'
         context = super().get_context_data(*args, **kwargs)
         context["q"] = self.request.GET.get("q")
         return render(request=self.request, template_name=template_name, context=context)
-        
 
     # return render(request=request, template_name=self.template_name, context=context)
 # https://evileg.com/ru/post/364/
