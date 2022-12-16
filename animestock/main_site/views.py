@@ -26,6 +26,8 @@ class Search(ListView):
     
     def get_queryset(self):
         return Anime.objects.filter(title__icontains=self.request.GET.get("q"))
+        # def get_queryset(self,):
+        # return Movie.objects.filter(name__iregex=self.request.GET.get("q")) исправление проблемы регистра
 
 
     # def get_context_data(self, *args, **kwargs):
@@ -36,6 +38,7 @@ class Search(ListView):
 
 
     def get_context_data(self, *args, **kwargs):
+        template_name = 'main_site/anime_list.html'
         context = super().get_context_data(*args, **kwargs)
         context["q"] = f'q={self.request.GET.get("q")}&'
         return context
