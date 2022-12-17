@@ -120,7 +120,7 @@ class AnimeDetail(GenreYear, DetailView):
 
     def get(self, request, slug):
         anime = Anime.objects.get(url=slug)
-        return render(request, 'main/layout_for_anime.html', {'anime_page' : anime})
+        return render(request, 'anime_pages/layout_for_anime.html', {'anime_page' : anime})
 
 
 
