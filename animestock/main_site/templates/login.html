@@ -116,40 +116,19 @@
                     </p>
                 </form>
 
-                <div class="row">
-                    <div class="col-5"></div>
-                    <div class="col-2">
-                        <img style="width: 100%;" src="{% static 'images/phot_profil.png' %}" alt="">
-                    </div>
-                    <div class="col-5"></div>
+                <div class="row" style="margin: 200px 0px;">
+                    
 
 
-                    <div class="col-4"></div>
-                    <div class="col-4">
-                        <h4 class="register_text">Имя</h4>
-                        <form method="POST">
-                            {% for field in form %}
-                            {% csrf_token %}
-                                {{ field }}
-                            <p><input class="register_input" type="" name="" placeholder="">
-
-                            </p>
-                            
-                        </form>
-
-                    </div>
-                    <div class="col-4"></div>
-
+                    
                     <div class="col-4"></div>
                     <div class="col-4">
 
                         <h4 class="register_text">Email</h4>
-                        <form  method="POST">
-                            {% csrf_token %}
-                            <!-- <p><input class="register_input" type="" name="" placeholder="">
+                        <form>
+                            <p><input class="register_input" type="" name="" placeholder="">
 
-                            </p> -->
-                            {{ form.email }}
+                            </p>
                         </form>
 
                     </div>
@@ -158,49 +137,25 @@
                     <div class="col-4"></div>
                     <div class="col-4">
                         <h4 class="register_text">Пароль</h4>
-                        <form  method="POST">
-                            {% csrf_token %}
-                            <!-- <p><input class="register_input" type="" name="" placeholder="">
+                        <form>
+                            <p><input class="register_input"  type="" name="" placeholder="">
 
-                            </p> -->
-                            {{ form.password1 }}
+                            </p>
                         </form>
 
                     </div>
                     <div class="col-4"></div>
 
-                    <div class="col-4"></div>
-                    <div class="col-4">
-                        <h4 class="register_text">Подтвердите пароль</h4>
-                        <div>
-                            <form method="POST">
-                                {% csrf_token %}
-                                {{ field }}
-                                <p><input class="register_input" type="text" name="x" placeholder="x">
-                            
-                                </p>
-                                
-                                {% endfor %}
-                            </form>
-                        </div>
+                    
 
-                    </div>
-                    <div class="col-4"></div>
-                    {{ form.errors }}
-                    {% for message in mesages %}
-                      <p id="messages">{{ message }}</p>
-                    {% endfor %}
+
                     <div class="col-4"></div>
                     <div class="col-4">
                         
-                            <span class="register_text">У тебя есть аккаунт,  </span>
-                            <a href="{% url 'login' %}">
-                                <span class="link_main_register">вход</span>
-                            </a>
+                            <span class="register_text">У вас нет аккаунта,  </span>
+                            <span class="link_main_register">регистрация</span>
                         <br>
-                        
-                        <button class="btn_registration" type="submit"><img style="width: 100%;" src="{% static 'images/button_register.png' %}" alt=""></button>
-                        
+                        <img style="width: 100%;" src="{% static 'images/button_register.png' %}" alt="">
 
                     </div>
                     <div class="col-4"></div>

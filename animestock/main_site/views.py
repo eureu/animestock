@@ -50,7 +50,7 @@ def loginPage(request):
             else:
                 messages.info(request, 'Имя или Пароль неверны')
 
-        return render(request, 'main/login.html')
+        return render(request, 'login.html')
 
 
 def logoutUser(request):
