@@ -143,19 +143,24 @@
 
                     <div class="col-4"></div>
                     <div class="col-4">
-                        <form>
-                            <label for="label_name" class="register_text">Имя</label>
+                        <form method="post">
+                            {% csrf_token %}
+                            {% for field in form %}
+                            <label for="{{ field.id_for_label }}" class="register_text">{{ field.label }}</label>    
+                          
 
-                            <input class="register_input" type="" name="" placeholder="">
+                            <!-- <input class="register_input" type="" name="" placeholder=""> -->
+
+                            <div class="register_input">
+                                {{ field }}
+                            </div>
+
+                            {% endfor %}
 
 
 
 
-
-
-
-
-
+<!-- 
                             <label for="label_email" class="register_text">Email</label>
 
                             <input class="register_input" type="" name="" placeholder="">
@@ -177,20 +182,34 @@
 
                             <label for="label_repeat" class="register_text">Подтвердите пароль</label>
 
-                            <input class="register_input" type="text" name="" placeholder="">
+                            <input class="register_input" type="text" name="" placeholder=""> -->
 
 
 
 
-
+                            {% if form.errors %}
+                            {% for field in form %}
+                            {% for error in field.errors %}
+                            <div class="alert alert-danger">
+                                {{ error|escape }}
+                            </div>
+                            {% endfor %}
+                            {% endfor %}
+                            {% for error in form.non_field_errors %}
+                            <div class="alert alert-danger">
+                                {{ error|escape }}
+                            </div>
+                            {% endfor %}
+                            {% endif %}
 
 
 
                             <label class="register_text"><label for="label_i_have">У тебя есть аккаунт, </label></span>
-                            <span class="link_main_register"><label for="label_i_have">вход</label></span>
-                            <br>
+                                <span class="link_main_register"><label for="label_i_have">вход</label></span>
+                                <br>
 
-                            <input class="buttun_registr" type="image" src="{% static 'images/button_register.png' %}">
+                                <input class="buttun_registr" type="image"
+                                    src="{% static 'images/button_register.png' %}">
                         </form>
 
                     </div>

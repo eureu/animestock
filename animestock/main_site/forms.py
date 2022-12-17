@@ -4,10 +4,11 @@ from django import forms
 
 
 class CreateUserForm(UserCreationForm):
-    username = forms.CharField(label='Имя', initial='Имя')
-    email = forms.EmailField()
-    password1 = forms.CharField()
-    password2 = forms.CharField()
+    # , initial='Имя'
+    username = forms.CharField(label='Имя') 
+    email = forms.EmailField(label='Email')
+    password1 = forms.CharField(label='Пароль')
+    password2 = forms.CharField(label='Подтвердите пароль')
     class Meta:
         model = User
         fields = ['username', 'email', 'password1', 'password2']
