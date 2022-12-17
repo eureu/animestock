@@ -24,10 +24,24 @@ body{
     color: white;
 }
 
+.buttun_registr{
+    width: 100%;
+}
+
+.heder_poisk{
+    
+    justify-content: center;
+
+    margin: 20px 0px;
+}
+
+
+
 .osn{
     min-height: 100vh;
     height: 100%;
     background-color: #151414;
+    
 }
 
 .container_flex_in_dop_func{
@@ -99,6 +113,11 @@ body{
     width: 100%; 
     height: 60px;
     border-radius: 10px;
+}
+
+.header_icon{
+    height: 100%;
+    margin-right: 10px;
 }
 
 .register_text{
