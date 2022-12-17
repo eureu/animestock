@@ -6,11 +6,6 @@ from django.db.models import Q
 # Create your views here.
 
 def index(request):
-
-    search_query = request.GET.get("q")
-    if search_query:
-        pass
-
     return render(request, 'index.html')
 
 
@@ -19,7 +14,6 @@ def genres(request):
     context = {
         'anime' : anime,
     }
-
     return render(request, 'genres.html', context=context)
 
 
@@ -45,6 +39,7 @@ class Search(ListView):
 
 
 class GenreYear:
+
     def get_genre(self):
         return Genre.objects.all()
 
@@ -54,6 +49,7 @@ class GenreYear:
 
 
 class Genre(GenreYear):
+
     def genres(request):
         anime = Anime.objects.all().order_by('id')
         context = {
@@ -63,9 +59,11 @@ class Genre(GenreYear):
 
 
 class AnimeDetail(GenreYear, DetailView):
+
     model = Anime
-    template_name = 'main/layout_for_anime.html'
+    template_name = 'anime_pages/layout_for_anime.html'
     context_object_name = 'anime_page'
+
     def get(self, request, slug):
         anime = Anime.objects.get(url=slug)
         return render(request, 'main/layout_for_anime.html', {'anime_page' : anime})
