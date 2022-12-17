@@ -13,6 +13,7 @@
     integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
   <link rel="stylesheet" href="https://bootstrap5.ru/css/docs.css">
   <link rel="stylesheet" href="{% static 'css/main.css' %}">
+  <link rel="icon" href="{% static 'images/icon/icon.png' %}" type="image/svg+xml">
 </head>
 
 <body>
@@ -122,7 +123,7 @@
               <div class="row justify-content-evenly block_genres">
                 {% block content %}
                 {% for post in anime %}
-                
+
                 <div class="col col-3 one_block_genres">
                   <a href="#">
                     <div>
