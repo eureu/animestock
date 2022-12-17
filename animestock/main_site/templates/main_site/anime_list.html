@@ -1,20 +1,25 @@
 {% extends 'genres.html' %}
 {% block content %}
 {% for anime in object_list %}
-<div class="col col-3 one_block_genres">
-  <a href="#">
-    <div>
-      <img class="poster_img" style="margin-bottom: 20px;" src="{{ anime.poster.url }}" alt="">
-    </div>
-  </a>
+<div class="row">
+  <div class="col col-1"></div>
+  <div class="col col-11">
+
+    <a href="#">
+      <div>
+        <img class="poster_img" style="margin-bottom: 20px;" src="{{ anime.poster.url }}" alt="">
+      </div>
+    </a>
+
+
+
+  </div>
+
 </div>
-<div class="col col-1 block_genres_pass"></div>
+
+
+
+
+</div>
 {% endfor %}
 {% endblock %}
-
-
-
-
-
-
-
