@@ -111,11 +111,26 @@
 
       <div class="col col-10  p-0 osn">
         <div class="col col-12">
-          <form action="{% url 'search' %}" method="get">
-            <p><input type="search" name="q" placeholder="Поиск по сайту">
-              <input type="submit" value="Найти">
-            </p>
-          </form>
+          <div class="row heder_poisk">
+            <div class="col-1"></div>
+            <div class="col-7">
+                <form style="width: 100%; height: 100%;" action="{% url 'search' %}" method="get">
+                    <input style="width: 80%; height: 100%; border-radius: 7px;" type="search" name="q" placeholder="Поиск по сайту">
+                        <input  type="image" src="{% static 'images/icon/search.png' %}" value="Найти">
+                       
+                    
+                </form>
+            </div>
+  
+            <div class="col-2"></div>
+  
+            <div class="col-2">
+              <img class="header_icon" src="{% static 'images/icon/none_activ/premium_none_activ.png' %}" alt="">
+              <img class="header_icon" src="{% static 'images/icon/bell.png' %}" alt="">
+              <img class="header_icon" src="{% static 'images/icon/go_to_register.png' %}" alt="">
+            </div>
+  
+        </div>
 
           <div class="row ">
             <div class="col-1"></div>

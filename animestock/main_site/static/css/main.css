@@ -24,7 +24,14 @@ body{
     color: white;
 }
 
+.buttun_registr{
+    width: 100%;
+}
+
 .heder_poisk{
+    
+    justify-content: center;
+
     margin: 20px 0px;
 }
 
