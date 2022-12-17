@@ -124,14 +124,13 @@
               <div class="row justify-content-evenly block_genres">
 
                 {% for post in anime %}
-                <div class="col col-3 one_block_genres">
+                <div class="col col-4 one_block_genres">
                   <a href="{{ post.url }}">
                     <div>
-                      <img class="poster_img" style="margin-bottom: 20px;" src="{{ post.poster.url }}" alt="">
+                      <img class="poster_img" src="{{ post.poster.url }}" alt="">
                     </div>
                   </a>
                 </div>
-                <div class="col col-1 block_genres_pass"></div>
 
                 {% endfor %}
               </div>
@@ -161,6 +160,7 @@
         document.getElementById('main').style.color = 'white';
         document.getElementById('icon_non_active_main').style.display = 'block';
         document.getElementById('icon_active_main').style.display = 'none';
+        
       }
       function rechangeItemMain() {
         document.getElementById('main').style.width = '90%';

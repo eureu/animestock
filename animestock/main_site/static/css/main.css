@@ -82,8 +82,17 @@ body{
 }
 
 .poster_img{
-    width: 227px;
-    height: 387px;
+    width: 90%;
+    height: 90%;
+    margin-bottom: 50px;
+    transition: all ease-in-out 0.3s;
+}
+
+.poster_img:hover{
+    width: 100%;
+    height: 100%;
+    margin-bottom: 0px;
+    
 }
 
 .go_to_favorite{
@@ -226,6 +235,8 @@ a {
     .one_block_genres{
         width: 40%;
     }
+
+    
 
     .block_genres_pass{
         display: none;
