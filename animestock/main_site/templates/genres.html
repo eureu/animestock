@@ -104,11 +104,12 @@
                     <div class="col col-7">
 
                         <!-- Одна строка | 12 -->
-                        {% block content %}
-                        {% for post in anime %}
+                        
 
 
                         <div class="row justify-content-evenly block_genres">
+                          {% block content %}
+                        {% for post in anime %}
                           <div class="col col-1 block_genres_pass"></div>
                           <div class="col col-3 one_block_genres">
                              <a href="#">
@@ -118,31 +119,18 @@
                              </a>
                           </div>
                           
-                          <!-- <div class="col col-3 one_block_genres block_genres_pass" >
-                              <a href="#">
-                                  <div>
-                                      <img class="poster_img" src="{{ post.poster.url }}" alt="">
-                                  </div>
-                              </a>
-                          </div>
                           
-                          <div class="col col-3 one_block_genres">
-                              <a href="#">
-                                  <div>
-                                      <img class="poster_img" src="{{ post.poster.url }}" alt="">
-                                  </div>
-                              </a>
-                          </div>
-                          <div class="col col-2 block_genres_pass"></div>
-                        </div> -->
-
-
-                        {% endfor %}
+                          {% endfor %}
                         {% endblock %}
+                          <div class="col col-2 block_genres_pass"></div>
+                        </div> 
+
+
+                        
                     </div>
                     
 
-                    
+
                     <div class="col col-5">
                         
                     </div>
