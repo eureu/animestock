@@ -106,12 +106,14 @@
                         <!-- Одна строка | 12 -->
                         {% block content %}
                         {% for post in anime %}
+
+
                         <div class="row justify-content-evenly block_genres">
                           <div class="col col-1 block_genres_pass"></div>
                           <div class="col col-3 one_block_genres">
                              <a href="#">
                               <div>
-                                  <img class="poster_img" src="" alt="">
+                                  <img class="poster_img" src="{{ post.poster.url }}" alt="">
                               </div>
                              </a>
                           </div>
@@ -132,37 +134,15 @@
                               </a>
                           </div>
                           <div class="col col-2 block_genres_pass"></div>
-
-                          <div class="col col-1 block_genres_pass"></div>
-                          <div class="col col-3 one_block_genres">
-                             <a href="#">
-                              <div>
-                                  <img class="poster_img" src="{{ post.poster.url }}" alt="">
-                              </div>
-                             </a>
-                          </div>
-                          {% endfor %}
-                            {% endblock %}
-                            <!-- Вторая строка -->
-                            <!-- <div class="col col-3 one_block_genres" >
-                                <a href="#">
-                                    <div>
-                                        <img class="poster_img" src="{% static 'images/posters/my_heroes_academy.png'%}" alt="">
-                                    </div>
-                                </a>
-                            </div>
-                            
-                            <div class="col col-3 one_block_genres">
-                                <a href="#">
-                                    <div>
-                                        <img class="poster_img" src="{% static 'images/posters/master_mec.png'%}" alt="">
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col col-2 block_genres_pass"></div> -->
-
                         </div>
+
+
+                        {% endfor %}
+                        {% endblock %}
                     </div>
+                    
+
+                    
                     <div class="col col-5">
                         
                     </div>
