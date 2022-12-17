@@ -1,7 +1,7 @@
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from django.http import HttpResponse
-from .models import Anime
+from .models import Anime, Genre
 from django.db.models import Q
 # Create your views here.
 
@@ -15,7 +15,12 @@ def index(request):
 
 
 def genres(request):
-    return render(request, 'genres.html')
+    anime = Anime.objects.all()
+    context = {
+        'anime' : anime,
+    }
+
+    return render(request, 'genres.html', context=context)
 
 
 def anime(request):
@@ -30,10 +35,42 @@ class Search(ListView):
  
     def get_queryset(self): # новый
         query = self.request.GET.get('q')
-        object_list = Anime.objects.filter(
-            Q(title__icontains=query)
-        )
+        if query:
+            object_list = Anime.objects.filter(
+                Q(title__icontains=query)
+            )
+        else:
+            object_list = Anime.objects.all()
         return object_list
+
+
+class GenreYear:
+    def get_genre(self):
+        return Genre.objects.all()
+
+
+    def get_year(self): 
+        return Anime.objects.all()
+
+
+class Genre(GenreYear):
+    def genres(request):
+        anime = Anime.objects.all().order_by('id')
+        context = {
+            'anime_info':anime
+        }
+        return render(request, 'main/genres.html', context)
+
+
+class AnimeDetail(GenreYear, DetailView):
+    model = Anime
+    template_name = 'main/layout_for_anime.html'
+    context_object_name = 'anime_page'
+    def get(self, request, slug):
+        anime = Anime.objects.get(url=slug)
+        return render(request, 'main/layout_for_anime.html', {'anime_page' : anime})
+
+
 
 # class Search(ListView):
 
