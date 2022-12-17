@@ -95,6 +95,17 @@ body{
     
 }
 
+.register_text{
+    width: 100%;
+    color: white;
+    font-size: 28px;
+}
+
+.link_main_register{
+    color: #C3079A;
+    font-size: 28px;
+}
+
 .go_to_favorite{
     display: flex;
     justify-content: end;
