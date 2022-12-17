@@ -1,5 +1,10 @@
 {% extends 'genres.html' %}
+{% block title %}
+<title>Search results</title>
+{% endblock %}
+
 {% block content %}
+
 {% for anime in object_list %}
 <div class="row">
   <div class="col col-1"></div>
@@ -17,9 +22,7 @@
 
 </div>
 
-
-
-
 </div>
 {% endfor %}
+
 {% endblock %}
