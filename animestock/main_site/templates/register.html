@@ -110,11 +110,15 @@
             </div>
 
             <div class="col col-10  p-0 osn">
-                <form action="{% url 'search' %}" method="get">
-                    <p><input type="search" name="q" placeholder="Поиск по сайту">
-                        <input type="submit" value="Найти">
-                    </p>
-                </form>
+                <div class="row">
+                    <div class="col-2">
+                        <form action="{% url 'search' %}" method="get">
+                            <p><input type="search" name="q" placeholder="Поиск по сайту">
+                                <input type="submit" value="Найти">
+                            </p>
+                        </form>
+                    </div>
+                </div>
 
                 <div class="row">
                     <div class="col-5"></div>
