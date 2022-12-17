@@ -146,21 +146,21 @@
                         <form method="post">
                             {% csrf_token %}
                             {% for field in form %}
-                            <label for="{{ field.id_for_label }}" class="register_text">{{ field.label }}</label>    
-                          
+                            <label for="{{ field.id_for_label }}" class="register_text">{{ field.label }}</label>
+
 
                             <!-- <input class="register_input" type="" name="" placeholder=""> -->
 
-                            <div class="register_input">
-                                {{ field }}
-                            </div>
+
+                            {{ field }}
+
 
                             {% endfor %}
 
 
 
 
-<!-- 
+                            <!-- 
                             <label for="label_email" class="register_text">Email</label>
 
                             <input class="register_input" type="" name="" placeholder="">
@@ -204,12 +204,13 @@
 
 
 
-                            <label class="register_text"><label for="label_i_have">У тебя есть аккаунт, </label></span>
-                                <span class="link_main_register"><label for="label_i_have">вход</label></span>
-                                <br>
+                            <span><label class="register_text"><label for="label_i_have">У тебя есть аккаунт, </label>
+                                    <a href="{% url 'login' %}"><span class="link_main_register"><label
+                                                for="label_i_have">вход</label></span></a>
+                                    <br>
 
-                                <input class="buttun_registr" type="image"
-                                    src="{% static 'images/button_register.png' %}">
+                                    <input class="buttun_registr" type="image"
+                                        src="{% static 'images/button_register.png' %}"></span>
                         </form>
 
                     </div>
