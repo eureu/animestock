@@ -187,6 +187,7 @@
 
 
 
+                           
                             <!-- {% if form.errors %}
                             {% for field in form %}
                             {% for error in field.errors %}
@@ -196,18 +197,19 @@
                             {% endfor %}
                             {% endfor %}
                             {% for error in form.non_field_errors %}
-                            <div class="alert alert-danger">
+                            <div class="alert alert-danger" style="color:#FFFFFF;">
                                 {{ error|escape }}
                             </div>
                             {% endfor %}
                             {% endif %} -->
 
 
-                            {% for message in messages %}
-                                <p id="messages">{{ message }}</p>
-                            {% endfor %}
-                            
 
+                            <!-- {% for message in messages %}
+                                <p id="messages"><div class="alert alert-danger" style="color:#FFFFFF;">{{ message }}</div></p>
+                            {% endfor %} -->
+                            
+                                {{ messages }}
 
                             <span><label class="register_text"><label for="label_i_have">У вас есть аккаунт? </label>
                                     <a href="{% url 'login' %}"><span class="link_main_register"><label

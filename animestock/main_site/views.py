@@ -42,11 +42,11 @@ def loginPage(request):
             username = request.POST.get('username')
             password = request.POST.get('password')
 
-            user = authenticate(request, username='username', password='password')
-
+            user = authenticate(request, username=username, password=password)
+    
             if user is not None:
                 login(request, user)
-                return redirect('/')
+                return redirect('index')
             else:
                 messages.info(request, 'Имя или Пароль неверны')
 
@@ -85,8 +85,9 @@ class Search(ListView):
         query = self.request.GET.get('q')
         if query:
             object_list = Anime.objects.filter(
-                Q(title__icontains=query)
+                Q(title__icontains=query) | Q(url__icontains=query)
             )
+
         else:
             object_list = Anime.objects.all()
         return object_list
