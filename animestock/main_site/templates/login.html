@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="docsearch:language" content="ru">
     <meta name="docsearch:version" content="5.0">
-    <title>Register</title>
+    <title>Login</title>
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
         integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
@@ -125,11 +125,12 @@
                     <div class="col-4">
 
                         <h4 class="register_text">Email</h4>
-                        <form>
+                        <form method="post">
+                            {% csrf_token %}
                             <p><input class="register_input" type="" name="" placeholder="">
 
                             </p>
-                        </form>
+                        
 
                     </div>
                     <div class="col-4"></div>
@@ -137,17 +138,19 @@
                     <div class="col-4"></div>
                     <div class="col-4">
                         <h4 class="register_text">Пароль</h4>
-                        <form>
+                        <!-- <form> -->
                             <p><input class="register_input"  type="" name="" placeholder="">
 
                             </p>
-                        </form>
+                        
 
                     </div>
                     <div class="col-4"></div>
 
                     
-
+                    {% for message in messages %}
+                        <p id="messages">{{ message }}</p>
+                    {% endfor %}
 
                     <div class="col-4"></div>
                     <div class="col-4">
@@ -156,8 +159,9 @@
                             <a href="{% url 'register' %}"><span class="link_main_register">Регистрация</span></a>
                         <br>
                         <img style="width: 100%;" src="{% static 'images/button_register.png' %}" alt="">
-
+                    </form>
                     </div>
+                
                     <div class="col-4"></div>
                 </div>
 
