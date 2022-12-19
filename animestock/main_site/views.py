@@ -42,11 +42,11 @@ def loginPage(request):
             username = request.POST.get('username')
             password = request.POST.get('password')
 
-            user = authenticate(request, username='username', password='password')
-
+            user = authenticate(request, username=username, password=password)
+    
             if user is not None:
                 login(request, user)
-                return redirect('/')
+                return redirect('index')
             else:
                 messages.info(request, 'Имя или Пароль неверны')
 
@@ -58,11 +58,12 @@ def logoutUser(request):
     return redirect('login')
 
 
-
+@login_required(login_url='login')
 def index(request):
     return render(request, 'index.html')
 
 
+@login_required(login_url='login')
 def genres(request):
     anime = Anime.objects.all()
     context = {
@@ -71,11 +72,12 @@ def genres(request):
     return render(request, 'genres.html', context=context)
 
 
+@login_required(login_url='login')
 def anime(request):
     return render(request, 'anime.html')
 
 
-
+@login_required(login_url='login')
 class Search(ListView):
 
     model = Anime
@@ -85,13 +87,15 @@ class Search(ListView):
         query = self.request.GET.get('q')
         if query:
             object_list = Anime.objects.filter(
-                Q(title__icontains=query)
+                Q(title__icontains=query) | Q(url__icontains=query)
             )
+
         else:
             object_list = Anime.objects.all()
         return object_list
 
 
+@login_required(login_url='login')
 class GenreYear:
 
     def get_genre(self):
@@ -112,6 +116,7 @@ class Genre(GenreYear):
         return render(request, 'main/genres.html', context)
 
 
+@login_required(login_url='login')
 class AnimeDetail(GenreYear, DetailView):
 
     model = Anime
