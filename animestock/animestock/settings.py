@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'main_site'
+    'main_site',
+    'social_django'
 ]
 
 MIDDLEWARE = [
@@ -70,10 +71,12 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends', # Добавил эту строку
             ],
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'animestock.wsgi.application'
 
@@ -147,3 +150,20 @@ MEDIA_URL = '/anime_posters/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTHENTICATION_BACKENDS = (
+    'social_auth.backends.contrib.vk.VKOAuth2Backend',
+    'social_core.backends.vk.VKOAuth2',          # бекенд авторизации через ВКонтакте
+    'django.contrib.auth.backends.ModelBackend', # бекенд классической аутентификации, чтобы работала авторизация через обычный логин и пароль
+)
+
+
+SOCIAL_AUTH_VK_OAUTH2_KEY = '51507083'
+SOCIAL_AUTH_VK_OAUTH2_SECRET = 'C5GjVDCT6XkF8AV9VyxT'
+
+
+VK_APP_ID = '51507083'
+VK_API_SECRET = 'C5GjVDCT6XkF8AV9VyxT'
+
+
+LOGIN_REDIRECT_URL = '/'
