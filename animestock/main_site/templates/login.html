@@ -128,15 +128,17 @@
                         <img class="header_icon" src="{% static 'images/icon/none_activ/premium_none_activ.png' %}"
                             alt="">
                         <img class="header_icon" src="{% static 'images/icon/bell.png' %}" alt="">
-                        <a href="{% url 'register' %}"><img class="header_icon" src="{% static 'images/icon/go_to_register.png' %}" alt=""></a>                    </div>
+                        <a href="{% url 'register' %}"><img class="header_icon"
+                                src="{% static 'images/icon/go_to_register.png' %}" alt=""></a>
+                    </div>
 
-                </div>  
+                </div>
 
                 <div class="row" style="margin: 200px 0px;">
-                    
 
 
-                    
+
+
                     <div class="col-4"></div>
                     <div class="col-4">
 
@@ -146,7 +148,7 @@
                             <p><input class="register_input" type="text" name="username" placeholder="">
 
                             </p>
-                        
+
 
                     </div>
                     <div class="col-4"></div>
@@ -155,30 +157,32 @@
                     <div class="col-4">
                         <h4 class="register_text">Пароль</h4>
                         <!-- <form> -->
-                            <p><input class="register_input"  type="password" name="password" placeholder="">
+                        <p><input class="register_input" type="password" name="password" placeholder="">
 
-                            </p>
-                        
+                        </p>
+
 
                     </div>
                     <div class="col-4"></div>
 
-                    
+
                     {% for message in messages %}
-                        <p id="messages"><div class="alert alert-danger" style="color:#FFFFFF;">{{ message }}</div></p>
+                    <p id="messages">
+                    <div class="alert alert-danger" style="color:#FFFFFF;">{{ message }}</div>
+                    </p>
                     {% endfor %}
 
                     <div class="col-4"></div>
                     <div class="col-4">
-                        
-                            <span class="register_text">У вас нет аккаунта?  </span>
-                            <a href="{% url 'register' %}"><span class="link_main_register">Регистрация</span></a>
+
+                        <span class="register_text">У вас нет аккаунта? </span>
+                        <a href="{% url 'register' %}"><span class="link_main_register">Регистрация</span></a>
                         <br>
                         <input class="buttun_registr" type="image"
-                                        src="{% static 'images/button_register.png' %}"></span>
-                    </form>
+                            src="{% static 'images/button_register.png' %}"></span>
+
                     </div>
-                
+                    </form>
                     <div class="col-4">
                         <a href="{% url 'logout' %}"> Logout </a>
 
