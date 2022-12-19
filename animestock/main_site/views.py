@@ -92,8 +92,7 @@ class Search(ListView):
 
         else:
             object_list = Anime.objects.all()
-        if object_list == {}:
-            return HttpResponse('По результатам поиска ничего не найдено')
+       
         return object_list
 
 

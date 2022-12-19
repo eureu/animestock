@@ -4,25 +4,31 @@
 {% endblock %}
 
 {% block content %}
-
+{% if object_list %}
 {% for anime in object_list %}
-<div class="row">
-  <div class="col col-1"></div>
-  <div class="col col-11">
 
-    <a href="http://127.0.0.1:8000/genres/{{anime.url}}">
-      <div>
-        <img  style="margin-bottom: 20px;" src="{{ anime.poster.url }}" alt="">
+    <div class="row">
+      <div class="col col-1"></div>
+        <div class="col col-11">
+
+            <a href="http://127.0.0.1:8000/genres/{{anime.url}}">
+              <div>
+                <img  style="margin-bottom: 20px;" src="{{ anime.poster.url }}" alt="">
+              </div>
+            </a>
+
+
+
+        </div>
+
       </div>
-    </a>
+
+    </div>
 
 
 
-  </div>
-
-</div>
-
-</div>
 {% endfor %}
-
+{% else %}
+<h1> По вашему запросу ничего не найдено...</h1>
+{% endif %}
 {% endblock %}

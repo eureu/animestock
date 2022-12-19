@@ -211,7 +211,7 @@
                             
                                 <!-- {{ messages }} -->
 
-                                {% for message in messages %}
+                                {% for message in messages.errors %}
                                     <p id="messages"><div class="alert alert-danger" style="color:#FFFFFF;">{{ message }}</div></p>
                                 {% endfor %}
 
