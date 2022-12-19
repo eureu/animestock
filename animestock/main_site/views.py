@@ -87,11 +87,13 @@ class Search(ListView):
         query = self.request.GET.get('q')
         if query:
             object_list = Anime.objects.filter(
-                Q(title__icontains=query) | Q(url__icontains=query)
+                Q(title__iregex=query) | Q(url__icontains=query)
             )
 
         else:
             object_list = Anime.objects.all()
+        if object_list == {}:
+            return HttpResponse('По результатам поиска ничего не найдено')
         return object_list
 
 
