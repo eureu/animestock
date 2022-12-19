@@ -43,7 +43,7 @@
                     <ul class="list-group ki">
                         <!-- Главная -->
                         <li class="li-he">
-                            <a href="#" class="var_nav">
+                            <a href="{% url 'index' %}" class="var_nav">
                                 <div class="link_bg_main" id="main">
                                     <div class="margain_nav">
                                         <img class="icon" style="display: none;" id="icon_non_active_main"
@@ -110,11 +110,27 @@
             </div>
 
             <div class="col col-10  p-0 osn">
-                <form action="{% url 'search' %}" method="get">
-                    <p><input type="search" name="q" placeholder="Поиск по сайту">
-                        <input type="submit" value="Найти">
-                    </p>
-                </form>
+                <div class="row heder_poisk">
+                    <div class="col-1"></div>
+                    <div class="col-7">
+                        <form style="width: 100%; height: 100%;" action="{% url 'search' %}" method="get">
+                            <input style="width: 80%; height: 100%; border-radius: 7px;" type="search" name="q"
+                                placeholder="Поиск по сайту">
+                            <input type="image" src="{% static 'images/icon/search.png' %}" value="Найти">
+
+
+                        </form>
+                    </div>
+
+                    <div class="col-2"></div>
+
+                    <div class="col-2">
+                        <img class="header_icon" src="{% static 'images/icon/none_activ/premium_none_activ.png' %}"
+                            alt="">
+                        <img class="header_icon" src="{% static 'images/icon/bell.png' %}" alt="">
+                        <a href="{% url 'register' %}"><img class="header_icon" src="{% static 'images/icon/go_to_register.png' %}" alt=""></a>                    </div>
+
+                </div>  
 
                 <div class="row" style="margin: 200px 0px;">
                     
@@ -163,6 +179,11 @@
                     </form>
                     </div>
                 
+                    <div class="col-4">
+                        <a href="{% url 'logout' %}"> Logout </a>
+
+                    </div>
+
                     <div class="col-4"></div>
                 </div>
 

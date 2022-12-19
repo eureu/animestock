@@ -55,15 +55,15 @@ def loginPage(request):
 
 def logoutUser(request):
     logout(request)
-    return redirect('login')
+    return redirect('index')
 
 
-@login_required(login_url='login')
+# @login_required(login_url='login')
 def index(request):
     return render(request, 'index.html')
 
 
-@login_required(login_url='login')
+# @login_required(login_url='login')
 def genres(request):
     anime = Anime.objects.all()
     context = {
@@ -72,12 +72,12 @@ def genres(request):
     return render(request, 'genres.html', context=context)
 
 
-@login_required(login_url='login')
+# @login_required(login_url='login')
 def anime(request):
     return render(request, 'anime.html')
 
 
-@login_required(login_url='login')
+# @login_required(login_url='login')
 class Search(ListView):
 
     model = Anime
@@ -95,7 +95,7 @@ class Search(ListView):
         return object_list
 
 
-@login_required(login_url='login')
+# @login_required(login_url='login')
 class GenreYear:
 
     def get_genre(self):
@@ -116,7 +116,7 @@ class Genre(GenreYear):
         return render(request, 'main/genres.html', context)
 
 
-@login_required(login_url='login')
+# @login_required(login_url='login')
 class AnimeDetail(GenreYear, DetailView):
 
     model = Anime

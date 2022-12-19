@@ -43,7 +43,7 @@
                     <ul class="list-group ki">
                         <!-- Главная -->
                         <li class="li-he">
-                            <a href="#" class="var_nav">
+                            <a href="{% url 'index' %}" class="var_nav">
                                 <div class="link_bg_main" id="main">
                                     <div class="margain_nav">
                                         <img class="icon" style="display: none;" id="icon_non_active_main"
@@ -128,10 +128,10 @@
                         <img class="header_icon" src="{% static 'images/icon/none_activ/premium_none_activ.png' %}"
                             alt="">
                         <img class="header_icon" src="{% static 'images/icon/bell.png' %}" alt="">
-                        <img class="header_icon" src="{% static 'images/icon/go_to_register.png' %}" alt="">
+                        <a href="{% url 'register' %}"><img class="header_icon" src="{% static 'images/icon/go_to_register.png' %}" alt=""></a>
                     </div>
 
-                </div>
+                </div>  
 
                 <div class="row">
                     <div class="col-5"></div>
@@ -212,7 +212,7 @@
                                 {{ messages }}
 
                             <span><label class="register_text"><label for="label_i_have">У вас есть аккаунт? </label>
-                                    <a href="{% url 'socialauth_begin' 'vk-oauth' %}"><span class="link_main_register"><label
+                                    <a href="{% url 'login' %}"><span class="link_main_register"><label
                                                 for="label_i_have">Вход</label></span></a>
                                     <br>
 
