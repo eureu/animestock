@@ -104,17 +104,27 @@ class GenreYear:
 
 
     def get_year(self): 
-        return Anime.objects.all()
+        return Anime.objects.all().values('pubdate')
+
+
+# а если мы жанр и год выбираем, но при этом у фильма год совпадает, жанр не совпадает то будет выводить  всё равно, потому что одно из условий совпадает, а должно чтобы было логическое "И" при использовании обоих фильтров
+# Вот как я сделал, что более правильно работает:
+#         if self.request.GET.getlist("genre") and self.request.GET.getlist("year"):
+#             queryset = Movie.objects.filter(year__in=self.request.GET.getlist("year"),
+#                                             genres__in=self.request.GET.getlist("genre"))
+#         else:
+#             queryset = Movie.objects.filter(Q(year__in=self.request.GET.getlist("year")) | Q(genres__in=self.request.GET.getlist("genre")))
 
 
 class Genre(GenreYear):
 
     def genres(request):
         anime = Anime.objects.all().order_by('id')
+        # genres = Genre.ge
         context = {
             'anime_info':anime
         }
-        return render(request, 'main/genres.html', context)
+        return render(request, 'genres.html', context)
 
 
 # @login_required(login_url='login')
