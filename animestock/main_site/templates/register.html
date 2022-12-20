@@ -209,7 +209,11 @@
                                 <p id="messages"><div class="alert alert-danger" style="color:#FFFFFF;">{{ message }}</div></p>
                             {% endfor %} -->
                             
-                                {{ messages }}
+                                <!-- {{ messages }} -->
+
+                                {% for message in messages.errors %}
+                                    <p id="messages"><div class="alert alert-danger" style="color:#FFFFFF;">{{ message }}</div></p>
+                                {% endfor %}
 
                             <span><label class="register_text"><label for="label_i_have">У вас есть аккаунт? </label>
                                     <a href="{% url 'login' %}"><span class="link_main_register"><label
