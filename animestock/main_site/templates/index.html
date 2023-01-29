@@ -334,11 +334,11 @@
 
             <div class="row justify-content-evenly block_genres">
 
-              {% for post in anime %}
+              {% for item in posters_anime %}
               <div class="col col-4 one_block_genres">
-                <a href="{{ post.url }}">
+                <a href="{% url 'page_anime' item.url %}">
                   <div>
-                    <img class="poster_img" src="{{ post.poster.url }}" alt="">
+                    <img class="poster_img" src="{{ item.poster.url }}" alt="">
                   </div>
                 </a>
               </div>
