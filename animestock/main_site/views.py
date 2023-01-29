@@ -139,12 +139,12 @@ class AnimeDetail(GenreYear, DetailView):
     template_name = 'anime_pages/layout_for_anime.html'
     context_object_name = 'anime_page'
 
-    def get(self, request, id, slug):
-        post = get_object_or_404(Anime, id=id, slug=slug)
+    def get(self, request, slug):
+        # post = get_object_or_404(Anime, slug=slug)
         anime = Anime.objects.get(url=slug)
         is_favourite = False
-        if post.favourite.filter(id=request.user.id).exists(): 
-            is_favourite = True
+        # if post.favourite.filter(id=request.user.id).exists(): 
+        #     is_favourite = True
         # context = {
         #     'anime_page' : anime,
         #     'is_favourite' : is_favourite
