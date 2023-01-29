@@ -16,7 +16,6 @@ from django.shortcuts import get_object_or_404
 def registerPage(request):
     # if request.user.is_authenticated:
     #     # return redirect('/')
-    #     pass
     # else:
         form = CreateUserForm()
 
@@ -37,7 +36,6 @@ def registerPage(request):
 def loginPage(request):
     # if request.user.is_authenticated:
     #     # return redirect('/')
-    #     pass
     # else:
         if request.method == 'POST':
             username = request.POST.get('username')
@@ -125,7 +123,6 @@ class Genre(GenreYear):
 
     def genres(request):
         anime = Anime.objects.all().order_by('id')
-        # genres = Genre.ge
         context = {
             'anime_info':anime
         }
