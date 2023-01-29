@@ -3,7 +3,18 @@ html { overflow-x:  hidden; -moz-user-select: none;
     -khtml-user-select: none;
     user-select: none;   }
 
+.future{
+    color: white;
+    font-size: 32px;
+}
 
+.next{
+    position: absolute;
+    right: 50px;
+    bottom: 0px;
+    top: 50%;
+    
+}
 
 body{
     background-color: #1C1D1D;
@@ -73,6 +84,13 @@ body{
     height: 70%;
 }
 
+.search_button{
+    position: absolute;
+    left: 0px;
+    top: 0;
+    z-index: 2;
+}
+
 .text_in_poster{
     position: absolute;
     display: flex;
@@ -88,6 +106,12 @@ body{
     font-size: 24px;
     
     
+}
+
+.logo_in_info{
+    position: absolute;
+    top: 10px;
+    left: 45%
 }
 
 .text_in_posters_container{

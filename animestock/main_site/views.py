@@ -8,6 +8,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from .forms import CreateUserForm
+from django.shortcuts import get_object_or_404
 # Create your views here.
 
 
@@ -138,11 +139,27 @@ class AnimeDetail(GenreYear, DetailView):
     template_name = 'anime_pages/layout_for_anime.html'
     context_object_name = 'anime_page'
 
-    def get(self, request, slug):
+    def get(self, request, id, slug):
+        post = get_object_or_404(Anime, id=id, slug=slug)
         anime = Anime.objects.get(url=slug)
-        return render(request, 'anime_pages/layout_for_anime.html', {'anime_page' : anime})
+        is_favourite = False
+        if post.favourite.filter(id=request.user.id).exists(): 
+            is_favourite = True
+        context = {
+            'anime_page' : anime,
+            'is_favourite' : is_favourite
+        }
+        return render(request, 'anime_pages/layout_for_anime.html', )
 
 
+def add_to_favourites(request, id):
+    post = get_object_or_404(Anime, id=id)
+    if post.favourite.filter(id=request.user.id).exists():
+        post.favourite.remove(request.user)
+    else:
+        post.favourite.add(request.user)
+    return redirect(request.POST.get('url_from'))
+    # return HttpResponseRedirect(post.get_absolute_url())
 
 # class Search(ListView):
 

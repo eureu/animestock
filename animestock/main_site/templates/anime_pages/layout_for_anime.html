@@ -140,11 +140,17 @@
                   <input type="hidden" name="url_from" value="{{ request.path }}">
                   <button type="submit" class="btn btn-success"></button>
                 </form> -->
-                    <a href="#">
-                      <img class="icon_in_serial" src="{% static 'images\icon\none_activ\favorite_none_activ.png' %}"
-                        alt="">
-                    </a>
-                  
+                {% if is_favourite %}
+                  <a href="{% url 'main_site:favourites' id=anime.id %}">
+                    <img class="icon_in_serial" src="{% static 'images\icon\activ\favorite_activ.png' %}"
+                      alt="">
+                  </a>
+                {% else %}
+                  <a href="{% url 'main_site:favourites' id=anime.id %}">
+                    <img class="icon_in_serial" src="{% static 'images\icon\none_activ\favorite_none_activ.png' %}"
+                      alt="">
+                  </a>
+                {% endif %}
                   
                 
                 <h5 class="dop_func_in_serial">поделиться</h5>
