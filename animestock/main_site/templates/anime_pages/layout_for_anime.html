@@ -134,24 +134,12 @@
 
             <div class="col-1"></div>
             <div class="col-2">
-              {% for id in anime %}
+              
               <div class="container_flex_in_dop_func">
-                <!-- <form action="{% url 'favorites:add' id=id.id %}" method="post">{% csrf_token %}
-                  <input type="hidden" name="type" value="{{ type }}">
-                  <input type="hidden" name="url_from" value="{{ request.path }}">
-                  <button type="submit" class="btn btn-success"></button>
-                </form> -->
-                <!-- {% if is_favourite %}
-                  <a href="{% url 'main_site:favourites' id=anime.id %}">
-                    <img class="icon_in_serial" src="{% static 'images\icon\activ\favorite_activ.png' %}"
-                      alt="">
-                  </a>
-                {% else %}
-                  <a href="{% url 'main_site:favourites' id=anime.id %}">
-                    <img class="icon_in_serial" src="{% static 'images\icon\none_activ\favorite_none_activ.png' %}"
-                      alt="">
-                  </a>
-                {% endif %} -->
+                <a href="#">
+                  <img class="icon_in_serial" src="{% static 'images\icon\none_activ\favorite_none_activ.png' %}"
+                    alt="">
+                </a>
                   
                 
                 <h5 class="dop_func_in_serial">поделиться</h5>
@@ -161,7 +149,7 @@
                 </a>
               </div>
             </div>
-            {% endfor %}
+            
             <div class="col-7"></div>
             <div class="col-1 justify-content-end go_to_favorite">
               <a href="#">
