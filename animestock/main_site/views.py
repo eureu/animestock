@@ -68,7 +68,9 @@ def genres(request):
     anime = Anime.objects.all()
     context = {
         'anime' : anime,
+        'genre' : GenreYear.get_genre
     }
+    print(context)
     return render(request, 'genres.html', context=context)
 
 
@@ -100,11 +102,13 @@ class Search(ListView):
 class GenreYear:
 
     def get_genre(self):
-        return Genre.objects.all()
+        genres = Genre.objects.all()
+        return genres
 
 
     def get_year(self): 
-        return Anime.objects.all().values('pubdate')
+        years = Anime.objects.all().values('pubdate')
+        return years
 
 
 # а если мы жанр и год выбираем, но при этом у фильма год совпадает, жанр не совпадает то будет выводить  всё равно, потому что одно из условий совпадает, а должно чтобы было логическое "И" при использовании обоих фильтров

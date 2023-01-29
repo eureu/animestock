@@ -164,9 +164,9 @@
                 </div>
                 <div class="row genres_container">
                 <!-- Начало копирования -->
-                {% for genre in view.get_genre %}
+                {% for genres in anime %}
                   <div class="col-4">
-                    <button class="button_genres">{{ genre.name }}</button>
+                    <button class="button_genres">{{ genres.genre }}</button>
                   </div>
                 {% endfor %}
                 <!-- Конец копирования -->
@@ -182,7 +182,7 @@
                 </div>
                 <div class="row genres_container">
                 <!-- Начало копирования -->
-                {% for year in views.get_year %}
+                {% for year in views.GenreYear.get_year %}
                   <div class="col-4">
                     <button class="button_genres">{{ year }}</button>
                   </div>
