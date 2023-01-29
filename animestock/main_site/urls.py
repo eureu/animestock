@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views
-
+# from django.conf.urls import url
 
 urlpatterns = [
     path('', views.index, name='index'),
@@ -11,4 +11,7 @@ urlpatterns = [
     path('register', views.registerPage, name='register'),
     path('login', views.loginPage, name='login'),
     path('logout', views.logoutUser, name='logout'),
+    path('favourites', views.add_to_favourites, name='favourites'),
 ]
+#  genres/<slug:slug>/
+# url(r'^genres/<slug:slug>/<int:_id>', views.AnimeDetail, name='page_anime'),

@@ -8,6 +8,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from .forms import CreateUserForm
+from django.shortcuts import get_object_or_404
 # Create your views here.
 
 
@@ -15,7 +16,6 @@ from .forms import CreateUserForm
 def registerPage(request):
     # if request.user.is_authenticated:
     #     # return redirect('/')
-    #     pass
     # else:
         form = CreateUserForm()
 
@@ -36,7 +36,6 @@ def registerPage(request):
 def loginPage(request):
     # if request.user.is_authenticated:
     #     # return redirect('/')
-    #     pass
     # else:
         if request.method == 'POST':
             username = request.POST.get('username')
@@ -124,7 +123,6 @@ class Genre(GenreYear):
 
     def genres(request):
         anime = Anime.objects.all().order_by('id')
-        # genres = Genre.ge
         context = {
             'anime_info':anime
         }
@@ -139,10 +137,26 @@ class AnimeDetail(GenreYear, DetailView):
     context_object_name = 'anime_page'
 
     def get(self, request, slug):
+        # post = get_object_or_404(Anime, slug=slug)
         anime = Anime.objects.get(url=slug)
-        return render(request, 'anime_pages/layout_for_anime.html', {'anime_page' : anime})
+        is_favourite = False
+        # if post.favourite.filter(id=request.user.id).exists(): 
+        #     is_favourite = True
+        # context = {
+        #     'anime_page' : anime,
+        #     'is_favourite' : is_favourite
+        # }
+        return render(request, 'anime_pages/layout_for_anime.html', {'anime_page' : anime, 'is_favourite' : is_favourite})
 
 
+def add_to_favourites(request, id):
+    post = get_object_or_404(Anime, id=id)
+    if post.favourite.filter(id=request.user.id).exists():
+        post.favourite.remove(request.user)
+    else:
+        post.favourite.add(request.user)
+    return redirect(request.POST.get('url_from'))
+    # return HttpResponseRedirect(post.get_absolute_url())
 
 # class Search(ListView):
 
