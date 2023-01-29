@@ -164,7 +164,7 @@
 
                 <div class="text_in_poster">
                   <div class="cont_textom_ne_osn" style="font-size: 40px; margin-bottom: 20px;">
-                    Ванпачмен
+                    {{ anime_page.title }}
                   </div>
                   
                   <div class="cont_textom_ne_osn" style="margin-bottom: 20px;">
@@ -180,24 +180,21 @@
                     </div>
 
                     <div style="margin-right: 5px;">
-                      <img src="{% static 'images/icon/none_activ/premium_none_activ.png'%}" alt="">
+                      <img src="{% static 'images/icon/clock.png'%}" alt="">
                     </div>
                     <div style="margin-right: 10px;">
-                      Аниме
+                      23 мин/Эп
                     </div>
 
                     <div style="margin-right: 5px;">
-                      <img src="{% static 'images/icon/none_activ/premium_none_activ.png'%}" alt="">
+                      <img src="{% static 'images/icon/calendar.png'%}" alt="">
                     </div>
                     <div>
-                      Аниме
+                      {{ anime_page.pubdate }}
                     </div>
                   </div>
                   <div class="cont_textom">
-                    События разворачиваются на территории вымышленного городка Z. Главным героем
-                    является Сайтама. Он супергерой, владеющий несокрушимой силой, способной вынести любого врага с
-                    одного удара. Однако в последнее время скучные и однообразные бои надоели пареньку, и он стал
-                    разыскивать подходящего соперника.
+                    {{ anime_page.description }}
                   </div>
                 </div>
               </div>
