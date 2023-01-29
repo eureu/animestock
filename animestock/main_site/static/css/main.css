@@ -81,7 +81,7 @@ body{
 
 .cont_textom{
     width: 100%;
-    height: 70%;
+    height: 50%;
 }
 
 .search_button{
@@ -103,7 +103,7 @@ body{
     width: 50%;
     height: 100%;
     color: white;
-    font-size: 24px;
+    font-size: 20px;
     
     
 }
