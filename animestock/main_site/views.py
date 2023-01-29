@@ -145,11 +145,11 @@ class AnimeDetail(GenreYear, DetailView):
         is_favourite = False
         if post.favourite.filter(id=request.user.id).exists(): 
             is_favourite = True
-        context = {
-            'anime_page' : anime,
-            'is_favourite' : is_favourite
-        }
-        return render(request, 'anime_pages/layout_for_anime.html', )
+        # context = {
+        #     'anime_page' : anime,
+        #     'is_favourite' : is_favourite
+        # }
+        return render(request, 'anime_pages/layout_for_anime.html', {'anime_page' : anime, 'is_favourite' : is_favourite})
 
 
 def add_to_favourites(request, id):
