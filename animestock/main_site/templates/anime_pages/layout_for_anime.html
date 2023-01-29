@@ -117,18 +117,13 @@
             </p>
           </form>
 
-          <!-- <div class="row ">
+          <div class="row ">
             <div class="col-1"></div>
             <div class="col-10 video">
               <iframe src="https://embed.kinobox.tv?q=Тройной форсаж%3A Токийский дрифт" allowfullscreen
                 style="width:100%;height:100%;border:0;"></iframe>
             </div>
-            <div class="col-1"></div> -->
-         
-            <div class="kinobox_player" style="width: 700px;"></div>
-            <script src="https://kinobox.tv/kinobox.min.js"></script>
-            <script>new Kinobox('.kinobox_player', {search: {kinopoisk: '{{ anime_page.video_url }}'}}).init();</script>
-           
+            <div class="col-1"></div>
 
 
 
@@ -145,17 +140,11 @@
                   <input type="hidden" name="url_from" value="{{ request.path }}">
                   <button type="submit" class="btn btn-success"></button>
                 </form> -->
-                <!-- {% if is_favourite %}
-                  <a href="{% url 'main_site:favourites' id=anime.id %}">
-                    <img class="icon_in_serial" src="{% static 'images\icon\activ\favorite_activ.png' %}"
-                      alt="">
-                  </a>
-                {% else %}
-                  <a href="{% url 'main_site:favourites' id=anime.id %}">
-                    <img class="icon_in_serial" src="{% static 'images\icon\none_activ\favorite_none_activ.png' %}"
-                      alt="">
-                  </a>
-                {% endif %} -->
+                    <a href="#">
+                      <img class="icon_in_serial" src="{% static 'images\icon\none_activ\favorite_none_activ.png' %}"
+                        alt="">
+                    </a>
+                  
                   
                 
                 <h5 class="dop_func_in_serial">поделиться</h5>
