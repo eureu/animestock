@@ -114,9 +114,11 @@
           <div class="col-1"></div>
           <div class="col-7">
             <form style="width: 100%; height: 100%;" action="{% url 'search' %}" method="get">
-              <input style="padding-bottom: 10px; width: 80%; height: 80%; border-radius: 7px;" type="search" name="q"
-                placeholder="Поиск по сайту">
-              <input type="image" src="{% static 'images/icon/search.png' %}" value="Найти">
+             <div style="position: relative;">
+               <input style="padding-bottom: 20px; width: 80%; height: 80%; border-radius: 7px;" type="search" name="q"
+                 placeholder="           Поиск">
+               <input class="search_button" type="image" src="{% static 'images/icon/search.png' %}" value="Найти">
+             </div>
 
 
             </form>
@@ -137,9 +139,9 @@
 
 
 
-          <div class="text_in_posters_container" style="display: block;" id="One">
+          <div class="text_in_posters_container" style="display: block; margin-left: 50px;" id="One">
 
-            <img style="width: 100%;" src="{% static 'images\one_punch_poster.png'%}" alt="">
+            <img style="width: 97%;" src="{% static 'images\one_punch_poster.png'%}" alt="">
 
             <div class="text_in_poster">
               <div class="cont_textom_ne_osn" style="font-size: 40px; margin-bottom: 20px;">
@@ -150,26 +152,26 @@
                 2 сезон
               </div>
 
-              <div class="cont_textom_ne_osn d-flex" style="margin-bottom: 20px;">
+              <div class="cont_textom_ne_osn d-flex" style="margin-bottom: 18px;">
                 <div style="margin-right: 5px;">
-                  <img src="{% static 'images/icon/none_activ/premium_none_activ.png'%}" alt="">
+                  <img src="{% static 'images/icon/type.png'%}" alt="">
                 </div>
-                <div style="margin-right: 10px;">
+                <div style="margin-right: 20px;">
                   Аниме
                 </div>
 
                 <div style="margin-right: 5px;">
-                  <img src="{% static 'images/icon/none_activ/premium_none_activ.png'%}" alt="">
+                  <img src="{% static 'images/icon/clock.png'%}" alt="">
                 </div>
-                <div style="margin-right: 10px;">
-                  Аниме
+                <div style="margin-right: 20px;">
+                  23 Мин/Эп
                 </div>
 
                 <div style="margin-right: 5px;">
-                  <img src="{% static 'images/icon/none_activ/premium_none_activ.png'%}" alt="">
+                  <img src="{% static 'images/icon/calendar.png'%}" alt="">
                 </div>
                 <div>
-                  Аниме
+                  28 марта 2021
                 </div>
               </div>
               <div class="cont_textom">
@@ -178,21 +180,21 @@
                 одного удара. Однако в последнее время скучные и однообразные бои надоели пареньку, и он стал
                 разыскивать подходящего соперника.
               </div>
-              <div class="next" onclick="clickOne()"><img src="{% static 'images\next.png' %}" alt=""></div>
+              
               <a href="#">
                 <div class="woth_osn"><img src="" alt=""></div>
               </a>
               <div class="plus_osn"><img src="" alt=""></div>
             </div>
-
+            <div class="next" onclick="clickOne()"><img src="{% static 'images\next.png' %}" alt=""></div>
 
 
           </div>
 
 
-          <div class="text_in_posters_container" id="Two" style="display: none;">
+          <div class="text_in_posters_container" id="Two" style="display: none; margin-left: 50px;">
 
-            <img style="width: 100%;" src="{% static 'images\one_punch_poster.png'%}" alt="">
+            <img style="width: 97%;" src="{% static 'images\one_punch_poster.png'%}" alt="">
 
             <div class="text_in_poster">
               <div class="cont_textom_ne_osn" style="font-size: 40px; margin-bottom: 20px;">
@@ -203,26 +205,26 @@
                 2 сезон
               </div>
 
-              <div class="cont_textom_ne_osn d-flex" style="margin-bottom: 20px;">
+              <div class="cont_textom_ne_osn d-flex" style="margin-bottom: 18px;">
                 <div style="margin-right: 5px;">
-                  <img src="{% static 'images/icon/none_activ/premium_none_activ.png'%}" alt="">
+                  <img src="{% static 'images/icon/type.png'%}" alt="">
                 </div>
-                <div style="margin-right: 10px;">
+                <div style="margin-right: 20px;">
                   Аниме
                 </div>
 
                 <div style="margin-right: 5px;">
-                  <img src="{% static 'images/icon/none_activ/premium_none_activ.png'%}" alt="">
+                  <img src="{% static 'images/icon/clock.png'%}" alt="">
                 </div>
-                <div style="margin-right: 10px;">
-                  Аниме
+                <div style="margin-right: 20px;">
+                  23 Мин/Эп
                 </div>
 
                 <div style="margin-right: 5px;">
-                  <img src="{% static 'images/icon/none_activ/premium_none_activ.png'%}" alt="">
+                  <img src="{% static 'images/icon/calendar.png'%}" alt="">
                 </div>
                 <div>
-                  Аниме
+                  28 марта 2021
                 </div>
               </div>
               <div class="cont_textom">
@@ -231,20 +233,21 @@
                 одного удара. Однако в последнее время скучные и однообразные бои надоели пареньку, и он стал
                 разыскивать подходящего соперника.
               </div>
-              <div class="next" onclick="clickTwo()"><img src="{% static 'images\next.png' %}" alt="">
-              </div>
+              
               <a href="#">
                 <div class="woth_osn"><img src="" alt=""></div>
               </a>
               <div class="plus_osn"><img src="" alt=""></div>
             </div>
+            <div class="next" onclick="clickOne()"><img src="{% static 'images\next.png' %}" alt=""></div>
+
           </div>
 
 
 
-          <div class="text_in_posters_container" id="Three" style="display: none;">
+          <div class="text_in_posters_container" id="Three" style="display: none; margin-left: 50px;">
 
-            <img style="width: 100%;" src="{% static 'images\one_punch_poster.png'%}" alt="">
+            <<img style="width: 97%;" src="{% static 'images\one_punch_poster.png'%}" alt="">
 
             <div class="text_in_poster">
               <div class="cont_textom_ne_osn" style="font-size: 40px; margin-bottom: 20px;">
@@ -255,26 +258,26 @@
                 2 сезон
               </div>
 
-              <div class="cont_textom_ne_osn d-flex" style="margin-bottom: 20px;">
+              <div class="cont_textom_ne_osn d-flex" style="margin-bottom: 18px;">
                 <div style="margin-right: 5px;">
-                  <img src="{% static 'images/icon/none_activ/premium_none_activ.png'%}" alt="">
+                  <img src="{% static 'images/icon/type.png'%}" alt="">
                 </div>
-                <div style="margin-right: 10px;">
+                <div style="margin-right: 20px;">
                   Аниме
                 </div>
 
                 <div style="margin-right: 5px;">
-                  <img src="{% static 'images/icon/none_activ/premium_none_activ.png'%}" alt="">
+                  <img src="{% static 'images/icon/clock.png'%}" alt="">
                 </div>
-                <div style="margin-right: 10px;">
-                  Аниме
+                <div style="margin-right: 20px;">
+                  23 Мин/Эп
                 </div>
 
                 <div style="margin-right: 5px;">
-                  <img src="{% static 'images/icon/none_activ/premium_none_activ.png'%}" alt="">
+                  <img src="{% static 'images/icon/calendar.png'%}" alt="">
                 </div>
                 <div>
-                  Аниме
+                  28 марта 2021
                 </div>
               </div>
               <div class="cont_textom">
@@ -283,16 +286,13 @@
                 одного удара. Однако в последнее время скучные и однообразные бои надоели пареньку, и он стал
                 разыскивать подходящего соперника.
               </div>
-              <div class="next" onclick="clickThree()"><img src="{% static 'images\next.png' %}" alt="">
-              </div>
+              
               <a href="#">
                 <div class="woth_osn"><img src="" alt=""></div>
               </a>
               <div class="plus_osn"><img src="" alt=""></div>
             </div>
-
-
-
+            <div class="next" onclick="clickOne()"><img src="{% static 'images\next.png' %}" alt=""></div>
 
 
           </div>
@@ -325,7 +325,7 @@
 
 
         <div class="future">
-          <div>
+          <div class="col col-2" style="margin-left: 40px;">
             Популярное
           </div>
 
