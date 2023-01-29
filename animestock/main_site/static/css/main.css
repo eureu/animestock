@@ -108,6 +108,12 @@ body{
     
 }
 
+.logo_in_info{
+    position: absolute;
+    top: 10px;
+    left: 45%
+}
+
 .text_in_posters_container{
     position: relative;
     color: white;
