@@ -59,7 +59,8 @@ def logoutUser(request):
 
 # @login_required(login_url='login')
 def index(request):
-    return render(request, 'index.html')
+    anime = Anime.objects.all().order_by('id')[7:]
+    return render(request, 'index.html', {'posters_anime' : anime})
 
 
 # @login_required(login_url='login')
