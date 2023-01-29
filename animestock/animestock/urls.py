@@ -22,6 +22,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main_site.urls')),
+    # path('', include('favorites.urls')),
     # path('', include('social_auth.urls')),
 ]
 
