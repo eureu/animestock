@@ -322,22 +322,22 @@
             }
 
           </script>
-        </div>
+        
 
 
 
-        <div class="future">
-          <div class="col col-2" style="margin-left: 40px;">
+        <div class="future row">
+          <div class="col-12" style="margin-left: 40px;">
             Популярное
           </div>
 
-          <div class="col col-1"></div>
-          <div class="col col-6">
+          
+          <div class="col col-11" style="margin-left: 40px;">
 
-            <div class="row justify-content-evenly block_genres">
+            <div class="row block_genres justify-content-between">
 
               {% for item in posters_anime %}
-              <div class="col col-4 one_block_genres">
+              <div class="col col-2  one_block_genres">
                 <a href="{% url 'page_anime' item.url %}">
                   <div>
                     <img class="poster_img" src="{{ item.poster.url }}" alt="">
@@ -360,7 +360,7 @@
       </div>
       
     </div>
-
+    </div>
     
 
   </div>
