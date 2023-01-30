@@ -62,6 +62,9 @@ def index(request):
     anime = Anime.objects.all().order_by('id')[7:]
     return render(request, 'index.html', {'posters_anime' : anime})
 
+def fav(request):
+    return render(request, 'favorites.html')
+
 
 # @login_required(login_url='login')
 def genres(request):

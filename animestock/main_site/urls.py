@@ -11,7 +11,7 @@ urlpatterns = [
     path('register', views.registerPage, name='register'),
     path('login', views.loginPage, name='login'),
     path('logout', views.logoutUser, name='logout'),
-    path('favourites', views.add_to_favourites, name='favourites'),
+    path('favourites', views.fav, name='favourites'),
 ]
 #  genres/<slug:slug>/
 # url(r'^genres/<slug:slug>/<int:_id>', views.AnimeDetail, name='page_anime'),
